@@ -11,7 +11,7 @@ const getSubAppConfig = () => {
     let list = [
       {
         name: 'app1',                     // umi-frame
-        entry: 'http://localhost:8001',
+        entry: 'http://localhost:8002',
         path: '/xc-frame/app1',
       },
       {
