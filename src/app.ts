@@ -44,6 +44,12 @@ export const qiankun = getSubAppConfig().then((res: any) => {
   })
   return {
     apps,
-    routes
+    routes,
+    fetch: (url: string) => {
+      return window.fetch(url, {
+        headers: { accept: 'text/html' },
+        cache: 'no-store',
+      });
+    },
   };
 });
