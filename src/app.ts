@@ -28,6 +28,7 @@ const getSubAppConfig = () => {
   })
 }
 
+/** 设置apps、routes */
 export const qiankun = getSubAppConfig().then((res: any) => {
   const apps: listProps[] = [];
   const routes: listProps[] = [];
