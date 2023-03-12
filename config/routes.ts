@@ -1,15 +1,13 @@
 const Layouts = '@/layouts';
-const Index = '@/pages/index'
-const LocalResources = '@/pages/localResources'
-const PageB = '@/pages/pageB'
+const Home = '@/pages/home'
 
 export default [
   {
     path: '/',
     component: Layouts,
     routes: [
-      { path: '/', redirect: '/index', },
-      { path: '/index', component: Index, exact: true },
+      { path: '/', redirect: '/home', },
+      { path: '/home', component: Home, exact: true },
     ],
   }
 ];

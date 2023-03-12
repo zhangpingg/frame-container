@@ -3,6 +3,7 @@ import store from './utils/store';
 interface listProps {
   name?: string;
   entry?: string;
+  activePath?: string;
   path?: string;
   microApp?: string;
   props?: any;
@@ -13,14 +14,14 @@ const getSubAppConfig = () => {
   return new Promise((resolve, reject) => {
     let list = [
       {
-        name: 'app1',                     // 子应用名称（唯一）
-        entry: 'http://localhost:8002',   // 子应用地址，即页面入口
-        path: '/xc-frame/app1',           // 子应用激活路由（http://localhost:8000/xc-frame/app1/home）
+        name: 'xone-app1',                // 子应用名称（唯一）
+        entry: 'http://localhost:8001',   // 子应用地址，即页面入口
+        activePath: '/xone-app1',         // 子应用激活路由（http://localhost:8000/xc-frame/app1/home）
       },
       {
-        name: 'app2',
+        name: 'xone-app2',
         entry: 'http://localhost:800x',
-        path: '/xc-frame/app2',
+        activePath: '/xone-app2',
       }
     ]
     resolve(list);
@@ -37,7 +38,7 @@ export const qiankun = getSubAppConfig().then((res: any) => {
       props: { store }
     })
     routes.push({
-      path: item.path,
+      path: `/xc-frame${item.activePath}`,
       microApp: item.name
     })
   })

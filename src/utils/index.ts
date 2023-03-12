@@ -13,5 +13,5 @@ export function setTheme(newKey: string, oldKey: string): void {
     oldClassString.push(newClassString);
   }
   body?.setAttribute('class', oldClassString.join(' '));
-  store.addItem('zp-theme', newKey);
+  store.addItem('xc-theme', newKey);
 }

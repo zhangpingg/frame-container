@@ -13,8 +13,8 @@ export default defineConfig({
   routes: routes,
   proxy: {
     // 子应用1-代理到本地子应用
-    '/xone': {
-      target: 'http://localhost:8002',
+    '/xone-app1': {
+      target: 'http://localhost:8001',
       changeOrigin: true,
     },
   },
