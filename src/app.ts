@@ -10,9 +10,9 @@ const getSubAppConfig = () => {
   return new Promise((resolve, reject) => {
     let list = [
       {
-        name: 'app1',                     // umi-frame
-        entry: 'http://localhost:8002',
-        path: '/xc-frame/app1',
+        name: 'app1',                     // 子应用名称（唯一）
+        entry: 'http://localhost:8002',   // 子应用地址，即页面入口
+        path: '/xc-frame/app1',           // 子应用激活路由
       },
       {
         name: 'app2',
