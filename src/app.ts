@@ -12,7 +12,7 @@ const getSubAppConfig = () => {
       {
         name: 'app1',                     // 子应用名称（唯一）
         entry: 'http://localhost:8002',   // 子应用地址，即页面入口
-        path: '/xc-frame/app1',           // 子应用激活路由
+        path: '/xc-frame/app1',           // 子应用激活路由（http://localhost:8003/xc-frame/app1/home）
       },
       {
         name: 'app2',

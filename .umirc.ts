@@ -11,6 +11,13 @@ export default defineConfig({
   favicon: '/xc-frame/favicon.png',
   base: '/',
   routes: routes,
+  proxy: {
+    // 子应用1-代理到本地子应用
+    '/xone': {
+      target: 'http://localhost:8002',
+      changeOrigin: true,
+    },
+  },
   fastRefresh: {},                  // 快速刷新
   outputPath: 'dist',               // build 打包后的目录，默认是 dist
   alias: {                          // 别名配置
