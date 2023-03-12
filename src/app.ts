@@ -1,8 +1,11 @@
+import store from './utils/store';
+
 interface listProps {
   name?: string;
   entry?: string;
   path?: string;
   microApp?: string;
+  props?: any;
 }
 
 /** 获取子应用配置 */
@@ -30,7 +33,8 @@ export const qiankun = getSubAppConfig().then((res: any) => {
   res.forEach((item: listProps) => {
     apps.push({
       name: item.name,
-      entry: item.entry
+      entry: item.entry,
+      props: { store }
     })
     routes.push({
       path: item.path,

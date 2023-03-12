@@ -1,3 +1,5 @@
+import store from './store';
+
 /** 设置皮肤，存储在缓存中，并给body追加肤色类名 */
 export function setTheme(newKey: string, oldKey: string): void {
   const body = document.querySelector('body');
@@ -11,5 +13,5 @@ export function setTheme(newKey: string, oldKey: string): void {
     oldClassString.push(newClassString);
   }
   body?.setAttribute('class', oldClassString.join(' '));
-  localStorage.setItem('zp-theme', newKey); //持久化
+  store.addItem('zp-theme', newKey);
 }
