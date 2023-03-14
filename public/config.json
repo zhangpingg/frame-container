@@ -1,11 +1,16 @@
 {
-  "isShowMenuAction": false,
-  "productTitle": "产品",
-  "urlPrefix": "xcvone",
-  "isDatePicker": true,
-  "isShowFooter": true,
-  "isShowSearchEngine": false,
-  "buttonVisible": true,
-  "noDist": false,
-  "isNewUI": true
+  "themeList": [
+    {
+      "key": "gold",
+      "name": "金色版"
+    },
+    {
+      "key": "light",
+      "name": "浅色版"
+    },
+    {
+      "key": "dark",
+      "name": "暗色版"
+    }
+  ]
 }

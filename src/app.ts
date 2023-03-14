@@ -15,8 +15,8 @@ const getSubAppConfig = () => {
     let list = [
       {
         name: 'xone-app1',                // 子应用名称（唯一）
-        entry: 'http://localhost:8001',   // 子应用地址，即页面入口
-        activePath: '/xone-app1',         // 子应用激活路由（http://localhost:8000/xc-frame/app1/home）
+        entry: 'http://localhost:8004',   // 子应用地址，即页面入口
+        activePath: '/xone-app1',         // 子应用激活路由（http://localhost:8000/xc-frame/xone-app1/home）
       },
       {
         name: 'xone-app2',
@@ -27,9 +27,20 @@ const getSubAppConfig = () => {
     resolve(list);
   })
 }
+/** 获取本地的config.json的静态配置文件 */
+const getConfigJson = (): Promise<any> =>
+  window
+    .fetch('/xc-frame/config.json', {
+      cache: 'no-store',
+    })
+    .then((response) => {
+      return response.json();
+    });
 
 /** 设置apps、routes */
-export const qiankun = getSubAppConfig().then((res: any) => {
+export const qiankun = getSubAppConfig().then(async (res: any) => {
+  window.$webConfig = await getConfigJson(); 
+
   const apps: listProps[] = [];
   const routes: listProps[] = [];
   res.forEach((item: listProps) => {
@@ -46,11 +57,11 @@ export const qiankun = getSubAppConfig().then((res: any) => {
   return {
     apps,
     routes,
-    fetch: (url: string) => {
-      return window.fetch(url, {
-        headers: { accept: 'text/html' },
-        cache: 'no-store',
-      });
-    },
+    // fetch: (url: string) => {
+    //   return window.fetch(url, {
+    //     headers: { accept: 'text/html' },
+    //     cache: 'no-store',
+    //   });
+    // },
   };
 });

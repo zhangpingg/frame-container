@@ -5,7 +5,8 @@ import styles from './index.module.less';
 const Layouts = (props: any) => {
   /** 设置皮肤，并给body追加肤色类名 */
   const setDefaultTheme = () => {
-    const themeName = localStorage.getItem('zp-theme') || 'gold';
+    const { themeList } = window.$webConfig;
+    const themeName = localStorage.getItem('xc-theme') || themeList?.[0]?.key || 'gold';
     setTheme(themeName, themeName);
   };
 
