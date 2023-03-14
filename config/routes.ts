@@ -1,13 +1,10 @@
-const Layouts = '@/layouts';
-const Home = '@/pages/home'
-
 export default [
   {
     path: '/',
-    component: Layouts,
+    component: '@/layouts',
     routes: [
       { path: '/', redirect: '/home', },
-      { path: '/home', component: Home, exact: true },
+      { path: '/home', component: '@/pages/home', exact: true },
     ],
   }
 ];

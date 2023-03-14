@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { setTheme } from '@/utils';
-import styles from './index.modules.less';
+import styles from './index.module.less';
 
 const Layouts = (props: any) => {
   /** 设置皮肤，并给body追加肤色类名 */
