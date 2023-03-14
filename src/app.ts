@@ -15,7 +15,7 @@ const getSubAppConfig = () => {
     let list = [
       {
         name: 'xone-app1',                // 子应用名称（唯一）
-        entry: 'http://localhost:8004',   // 子应用地址，即页面入口
+        entry: 'http://localhost:8001',   // 子应用地址，即页面入口
         activePath: '/xone-app1',         // 子应用激活路由（http://localhost:8000/xc-frame/xone-app1/home）
       },
       {
