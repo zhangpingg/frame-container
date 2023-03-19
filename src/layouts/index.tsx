@@ -1,17 +1,20 @@
 import { useEffect } from 'react';
-import { setTheme } from '@/utils';
+import { addClassName } from '@/utils/dom';
+import store from '@/utils/store';
 import styles from './index.module.less';
 
 const Layouts = (props: any) => {
   /** 设置皮肤，并给body追加肤色类名 */
-  const setDefaultTheme = () => {
+  const setTheme = () => {
     const { themeList } = window.$webConfig;
+    const body = document.querySelector('body');
     const themeName = localStorage.getItem('xc-theme') || themeList?.[0]?.key || 'gold';
-    setTheme(themeName, themeName);
+    addClassName(body, `theme-${themeName}`);
+    store.addItem('xc-theme', themeName);
   };
 
   useEffect(() => {
-    setDefaultTheme();
+    setTheme();
   }, []);
 
   return (
