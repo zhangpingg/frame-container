@@ -11,6 +11,7 @@ const Layouts = (props: any) => {
     const themeName = localStorage.getItem('xc-theme') || themeList?.[0]?.key || 'gold';
     addClassName(body, `theme-${themeName}`);
     store.addItem('xc-theme', themeName);
+    document.body.setAttribute('data-name', 'xone-xqxj'); // 在基座body设置子应用的标识
   };
 
   useEffect(() => {
